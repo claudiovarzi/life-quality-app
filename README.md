@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/claudiovarzi/life-quality-app">
-    <img src="/src/assets/img/city.svg" alt="Logo">
+    <img src="/src/assets/img/city.svg" alt="Logo" width="100px">
   </a>
 
   <h3 align="center">Coming Home</h3>
@@ -51,7 +51,6 @@ Statistics include the total score of the city, a brief description of it and th
 * [Webpack 5](https://webpack.js.org/blog/2020-10-10-webpack-5-release/)
 * [Lodash](https://lodash.com/)
 * [Axios](https://github.com/axios/axios)
-* [Animate CSS](https://animate.style/)
 
 ## Getting Started
 
@@ -91,6 +90,14 @@ You can then install the latest version of npm from your terminal with the comma
 The user can type a city on the search input. City name must be the english name of that city. When the form is submitted, a get axios request to the Teleport API fetches the data 
 of the city. These life quality data are then displayed in the interface.
 
+## Collaboration
+
+No collaboration
+
+## Known_Bugs
+
+On today's date (23.02.22),
+[Teleport](https://developers.teleport.org/api/getting_started/) service is no longer available due to error 403 (Access Denied) of the server. Anyway, the app is still working correctly except that the API fetch could be slow.
 
 ## License
 
@@ -104,14 +111,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Project Repository: [Coming Home](https://github.com/claudiovarzi/life-quality-app)
 
 Project Website:  [Coming Home - Netlify](https://cv-life-quality-app.netlify.app/)
-
-Portfolio: [claudiovarzi-web-developer-portfolio](https://claudiovarzi.github.io/my-portfolio/)
-
-## Acknowledgements
-
-* [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
-* [Awesome README](https://github.com/matiassingers/awesome-readme)
-* [Teleport API](https://developers.teleport.org/api/getting_started/)
 
 
 
