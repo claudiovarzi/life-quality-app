@@ -1,0 +1,128 @@
+@media only screen and (max-width: 767px) {
+
+    body {
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+    .header {
+        width: 90%;
+        margin: 40px 0;
+        padding: 20px;
+    }
+
+    .image {
+        max-width: 80px;
+    }
+
+    .title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .main {
+        width: 90%;
+        margin-bottom: 40px;
+        padding: 30px 20px 0px 20px;
+    }
+
+    .search {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .text-box {
+        padding: 10px;
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    .input-error {
+        margin-bottom: 30px;
+        text-align: start;
+        font-size: 18px;
+    }
+
+    .button {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 20px;
+        padding: 7.5px;
+        font-size: 18px;
+        margin-bottom: 30px;
+        letter-spacing: 0.5px;
+    }
+
+    .button:active,
+    .info:active {
+        background-color: #5a189a;
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .summary {
+        text-align: justify;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+    }
+
+    .scores-title {
+        margin-bottom: 5px;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+    }
+
+    .scores-bar {
+        margin-bottom: 30px;
+    }
+
+    .scores-fill, .empty-fill {
+        height: 20px;
+    }
+
+    .scores-percent {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+    }
+
+    .info {
+        padding: 7.5px;
+        font-size: 18px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+        letter-spacing: 0.5px;
+    }
+
+    .footer {
+        width: 90%;
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .note {
+        width: 100%;
+        font-size: 1.5rem;
+        padding-bottom: 10px;
+    }
+
+    .contact:active {
+        color: #5a189a;
+        text-decoration: underline;
+    }
+
+    .copyright {
+        font-size: 18px;
+    }
+
+}

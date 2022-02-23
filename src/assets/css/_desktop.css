@@ -1,0 +1,102 @@
+@media only screen and (min-width: 1024px) {
+
+    body {
+        line-height: 2;
+        margin: 0 auto;
+        max-width: 1300px;
+    }
+
+    .header {
+        margin-top: 40px;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .image {
+        max-width: 120px;
+    }
+
+    .title {
+        margin-bottom: 10px;
+        font-size: 3.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    /*.usage {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }*/
+
+    .main {
+        margin-top: 40px;
+        width: 90%;
+        padding: 30px;
+    }
+
+    .search {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .text-box {
+        height: 40px;
+        width: 80%;
+        padding: 0 10px;
+        font-size: 18px;
+    }
+
+    .button {
+        width: 10%;
+        height: 40px;
+        text-align: center;
+        margin-left: 10px;
+        border-radius: 20px;
+        font-size: 18px;
+    }
+
+    .scores {
+        display: none;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 50px;
+        margin: 50px 0;
+    }
+
+    .scores-title {
+        text-align: left;
+    }
+
+    .summary {
+        margin: 50px 0;
+        text-align: justify;
+    }
+
+    .input-error {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+
+    .info {
+        width: 165px;
+        height: 40px;
+        padding: 0 30px;
+        font-size: 18px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    .more-info:active {
+        color: #5D6063;
+    }
+    
+    .footer {
+        margin: 40px 0;
+        width: 90%;
+        padding: 30px 0;
+        font-size: 1.5rem;
+    }
+}

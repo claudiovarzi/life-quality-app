@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    color: #5D6063;
+    background-color: #eae8ff;
+    font-family: 'Comfortaa', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 100;
+    letter-spacing: 0px;
+}
+
+.header, .main, .footer {
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #D6D9DC;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #cdcdcd;
+}
+
+h1 {
+    text-shadow: 2px 2px #cdcdcd;
+}
+
+
+.text-box {
+    color: #5D6063;
+    background-color: #fff;
+    border: 1px solid #D6D9DC;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #cdcdcd;
+    font-family: 'Comfortaa', cursive;
+}
+
+.text-box:hover, .text-box:focus {
+    box-shadow: 2px 2px 8px #b3b3b8;
+}
+
+.invalid-city {
+    border: 1px solid red;
+    background-color: #fffafa;
+    color: red;
+}
+
+.input-error {
+    display: none;
+    color: red;
+    margin: 0 auto;
+}
+
+.button {
+    font-family: 'Comfortaa', cursive;
+    background-color: #5a189a;
+    border: none;
+    box-shadow: 2px 2px 5px #cdcdcd;
+    color: #fff;
+    font-weight: 100;
+}
+
+.button:hover,
+.info:hover {
+    box-shadow: 2px 2px 8px #424242;
+}
+
+.button:active,
+.info:active {
+    background-color: #fff;
+    color: #5D6063;
+}
+
+.summary {
+    display: block;
+}
+
+.scores-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scores {
+    display: none;
+}
+
+.scores-bar {
+    width: 100%;
+    background-color: #adb5bd;
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px #cdcdcd
+}
+
+.scores-fill, .empty-fill {
+    height: 100%;
+    position: absolute;
+    background-color: #5a189a;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.empty-fill {
+    width: 1%;
+}
+
+.hidden-elements, .hidden-data {
+    display: none;
+}
+
+.tot {
+    animation: tot 1s;
+}
+
+.oto {
+    animation: oto 1s;
+}
+
+@keyframes tot {
+    from {
+        width: 0%;
+    }
+    to {
+      
+    }
+}
+
+@keyframes oto {
+    from {
+        
+    }
+    to {
+        width: 0%;
+    }
+    
+}
+
+.info {
+    margin: 0 auto;
+    background-color: #5a189a;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #cdcdcd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.more-info {
+    color: #fff;
+}
+
+.overall {
+    color: #5a189a;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.note {
+    font-weight: 400;
+}
+
+.contact {
+    color: #5a189a;
+    font-weight: 700;
+}
+
+.contact:hover {
+    color: #5D6063;
+}
+
+.contact:active {
+    color: #5a189a;
+}
