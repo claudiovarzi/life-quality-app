@@ -18,6 +18,49 @@ const definitonDiv = document.querySelector('[data-definition]');
 
 
 //Event functions
+function animateElements() {
+    const scoresFill = document.querySelectorAll('.empty-fill');
+    const scoresPerc = document.querySelectorAll('.scores-percent');
+    scoresFill.forEach(element => {
+        element.classList.remove('tot');
+        element.classList.add('oto');
+        setTimeout(() => {
+            element.classList.remove('scores-fill');
+            element.style.width = '0%';
+        }, 900);
+    });
+    scoresPerc.forEach(element => element.innerText = '0/10');
+    searchBar.classList.remove('invalid-city');
+    hiddenElems.forEach(element => element.style.display = 'none');
+    inputError.style.display = 'none';
+};
+
+
+function setScores(cityData, citySummary, cityScore, city){
+    for (let i = 0; i < cityData.length; i++) {
+        const score = _.get(cityData, `${i}.score_out_of_10`);
+        document.querySelector(`[data-scores-percent-${i}]`).innerText = `${Math.round(score)}/10`;
+        document.querySelector(`[data-scores-fill-${i}]`).classList.remove('oto');
+        document.querySelector(`[data-scores-fill-${i}]`).classList.add('scores-fill', 'tot');
+        document.querySelector(`[data-scores-fill-${i}]`).style.width = `${(Math.round(score) * 10)}%`;
+    };
+    
+    summaryElem.innerText = citySummary
+                                    .replace(/(<([^>]+)>)/gi, '')
+                                    .replace(/\s\s+/g, ' ')
+                                    .trim();
+    summaryElem.setAttribute('class', 'summary');
+    totalScoreElem.innerText = `${Math.round(cityScore / 10)}/10`;
+    document.querySelector(`[data-scores-fill-17]`).classList.remove('oto');
+    document.querySelector(`[data-scores-fill-17]`).classList.add('scores-fill', 'tot');
+    document.querySelector(`[data-scores-fill-17]`).style.width = `${(Math.round(cityScore))}%`;
+    hiddenElems.forEach(element => element.style.display = 'block');
+
+    document.querySelector('[data-scores-div]').style.display = 'grid';
+    document.querySelector('[data-more-info]').setAttribute('href', `https://teleport.org/cities/${city}/`);
+};
+
+
 function fetchCity(){
     let city = document.querySelector('[data-text-box]').value;
     city = city
@@ -52,53 +95,16 @@ function fetchCity(){
         });
 };
 
-function setScores(cityData, citySummary, cityScore, city){
-    for (let i = 0; i < cityData.length; i++) {
-        const score = _.get(cityData, `${i}.score_out_of_10`);
-        document.querySelector(`[data-scores-percent-${i}]`).innerText = `${Math.round(score)}/10`;
-        document.querySelector(`[data-scores-fill-${i}]`).classList.remove('oto');
-        document.querySelector(`[data-scores-fill-${i}]`).classList.add('scores-fill', 'tot');
-        document.querySelector(`[data-scores-fill-${i}]`).style.width = `${(Math.round(score) * 10)}%`;
-    };
-    
-    summaryElem.innerText = citySummary
-                                    .replace(/(<([^>]+)>)/gi, '')
-                                    .replace(/\s\s+/g, ' ')
-                                    .trim();
-    summaryElem.setAttribute('class', 'summary');
-    totalScoreElem.innerText = `${Math.round(cityScore / 10)}/10`;
-    document.querySelector(`[data-scores-fill-17]`).classList.remove('oto');
-    document.querySelector(`[data-scores-fill-17]`).classList.add('scores-fill', 'tot');
-    document.querySelector(`[data-scores-fill-17]`).style.width = `${(Math.round(cityScore))}%`;
-    hiddenElems.forEach(element => element.style.display = 'block');
-
-    
-    document.querySelector('[data-scores-div]').style.display = 'grid';
-    document.querySelector('[data-more-info]').setAttribute('href', `https://teleport.org/cities/${city}/`);
-};
-
 
 //Data Events
-searchButton.addEventListener('click', () => {
-    fetchCity();
+searchBar.addEventListener('click', animateElements);
+searchBar.addEventListener('keyup', event => {
+    if(event.keyCode === 13){
+        event.preventDefault();
+        searchButton.click();
+    };
 });
-
-searchBar.addEventListener('click', () => {
-    const scoresFill = document.querySelectorAll('.empty-fill');
-    const scoresPerc = document.querySelectorAll('.scores-percent');
-    scoresFill.forEach(element => {
-        element.classList.remove('tot');
-        element.classList.add('oto');
-        setTimeout(() => {
-            element.classList.remove('scores-fill');
-            element.style.width = '0%';
-        }, 900);
-    });
-    scoresPerc.forEach(element => element.innerText = '0/10');
-    searchBar.classList.remove('invalid-city');
-    hiddenElems.forEach(element => element.style.display = 'none');
-    inputError.style.display = 'none';
-});
+searchButton.addEventListener('click', fetchCity);
 
 
 //Display header image
