@@ -1,7 +1,7 @@
-import "./assets/css/_all.css";
-import "./assets/css/_mobile.css";
-import "./assets/css/_tablet.css";
-import "./assets/css/_desktop.css";
+import "./assets/css/all.css";
+import "./assets/css/mobile.css";
+import "./assets/css/tablet.css";
+import "./assets/css/desktop.css";
 import cityImg from "./assets/img/city.svg";
 import axios from 'axios';
 import _ from 'lodash';
@@ -15,11 +15,6 @@ const totalScoreElem = document.querySelector('[data-teleport-city-score]');
 const inputError = document.querySelector('[data-input-error]');
 const hiddenElems = document.querySelectorAll('[data-hidden-elements]');
 const definitonDiv = document.querySelector('[data-definition]');
-
-const appImg = new Image();
-appImg.src = cityImg;
-definitonDiv.insertBefore(appImg, definitonDiv.childNodes['0']);
-appImg.setAttribute('class', 'image');
 
 
 //Event functions
@@ -81,7 +76,7 @@ function setScores(cityData, citySummary, cityScore, city){
     document.querySelector('[data-scores-div]').style.display = 'grid';
     document.querySelector('[data-more-info]').setAttribute('href', `https://teleport.org/cities/${city}/`);
 };
-    
+
 
 //Data Events
 searchButton.addEventListener('click', () => {
@@ -104,5 +99,14 @@ searchBar.addEventListener('click', () => {
     hiddenElems.forEach(element => element.style.display = 'none');
     inputError.style.display = 'none';
 });
+
+
+//Display header image
+const appImg = new Image();
+appImg.src = cityImg;
+definitonDiv.insertBefore(appImg, definitonDiv.childNodes['0']);
+appImg.setAttribute('class', 'image');
+
+
 
 
