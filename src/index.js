@@ -56,7 +56,6 @@ function setScores(cityData, citySummary, cityScore, city){
     document.querySelector(`[data-scores-fill-17]`).style.width = `${(Math.round(cityScore))}%`;
     hiddenElems.forEach(element => element.style.display = 'block');
 
-    
     document.querySelector('[data-scores-div]').style.display = 'grid';
     document.querySelector('[data-more-info]').setAttribute('href', `https://teleport.org/cities/${city}/`);
 };
@@ -83,16 +82,13 @@ function fetchCity(){
               console.log('City not found');
               searchBar.classList.add('invalid-city');
               inputError.style.display = 'block';
-            } else if (error.response) {
+            } else {
                 console.log(error.response.data);
                 console.log(error.response.status);
-                console.log(error.response.headers);
-            } else if (error.request) {
-                console.log(error.request);
-            } else {
                 console.log('Error', error.message);
-            }
-            console.log(error.config);
+                inputError.style.display = 'block';
+                inputError.innerText = `Error ${error.response.status}. Something went wrong. Please try again.`
+            } 
         });
 };
 

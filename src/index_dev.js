@@ -82,16 +82,13 @@ function fetchCity(){
               console.log('City not found');
               searchBar.classList.add('invalid-city');
               inputError.style.display = 'block';
-            } else if (error.response) {
+            } else {
                 console.log(error.response.data);
                 console.log(error.response.status);
-                console.log(error.response.headers);
-            } else if (error.request) {
-                console.log(error.request);
-            } else {
                 console.log('Error', error.message);
-            }
-            console.log(error.config);
+                inputError.style.display = 'block';
+                inputError.innerText = `Error ${error.response.status}. Something went wrong. Please try again.`
+            } 
         });
 };
 
