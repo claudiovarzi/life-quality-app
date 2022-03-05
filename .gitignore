@@ -106,5 +106,5 @@ dist
 # Netlify
 .netlify/
 
-#build
+# Build
 .build/
