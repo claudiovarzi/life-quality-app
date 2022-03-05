@@ -61,35 +61,35 @@ function setScores(cityData, citySummary, cityScore, city){
 };
 
 
-function fetchCity(){
-    let city = document.querySelector('[data-text-box]').value;
-    city = city
+async function fetchCity(){
+    try {
+        let city = document.querySelector('[data-text-box]').value;
+        city = city
             .toLowerCase()
             .replace(/\s+/g, ' ')
             .trim()
             .replace(' ', '-');
                 
-    axios
-        .get(`https://api.teleport.org/api/urban_areas/slug:${city}/scores/`)
-        .then(response => {
-            const cityData = response.data.categories;
-            const citySummary = response.data.summary;
-            const cityScore = response.data.teleport_city_score;
-            setScores(cityData, citySummary, cityScore, city);
-        })
-        .catch(error => {
-            if (error.response.status === 404) {
-              console.log('City not found');
-              searchBar.classList.add('invalid-city');
-              inputError.style.display = 'block';
-            } else {
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log('Error', error.message);
-                inputError.style.display = 'block';
-                inputError.innerText = `Error ${error.response.status}. Something went wrong. Please try again.`
-            } 
-        });
+        const response = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${city}/scores/`);
+
+        const cityData = _.get(response, 'data.categories');
+        const citySummary = _.get(response, 'data.summary');
+        const cityScore = _.get(response, 'data.teleport_city_score');
+        setScores(cityData, citySummary, cityScore, city);
+
+    } catch (error) {
+        if (error.response.status === 404) {
+            console.log('City not found');
+            searchBar.classList.add('invalid-city');
+            inputError.style.display = 'block';
+        } else {
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log('Error', error.message);
+            inputError.style.display = 'block';
+            inputError.innerText = `Error ${error.response.status}. Something went wrong. Please try again.`
+        } 
+    }
 };
 
 
